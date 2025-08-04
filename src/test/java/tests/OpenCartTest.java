@@ -3,6 +3,7 @@ package tests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import io.qameta.allure.Description;
 import pages.BagItemPage;
 import pages.CartPage;
 
@@ -10,8 +11,9 @@ public class OpenCartTest extends TestBase {
 	BagItemPage bagItemPageObject;
 	CartPage cartPageObject;
 
-	
 	@Test
+	@Description("This test open cart")
+
 	public void openCart()  {
 		bagItemPageObject = new BagItemPage(driver);
 		bagItemPageObject.openShoppingCart();

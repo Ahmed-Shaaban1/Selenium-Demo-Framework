@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 
 import com.github.javafaker.Faker;
 
+import io.qameta.allure.Description;
 import pages.CheckoutPage;
 
 public class FillCheckoutInformationTest extends TestBase {
@@ -15,6 +16,8 @@ public class FillCheckoutInformationTest extends TestBase {
 	 String pCode = fakeData.bothify("1234");
 	
 	@Test
+	 @Description("This test fills checkout info")
+
 	public void fillCheckoutInfo() {
 		checkoutPageObject = new CheckoutPage(driver);
 		checkoutPageObject.fillInformation(fName,lName,pCode);

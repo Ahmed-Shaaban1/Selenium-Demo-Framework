@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import dataProvider.JsonDataProvider;
+import io.qameta.allure.Description;
 import pages.LoginPage;
 import pages.ProductsPage;
 
@@ -13,6 +14,8 @@ public class LoginTest extends TestBase {
 
 
 	@Test(dataProvider = "loginData", dataProviderClass = JsonDataProvider.class)
+	@Description("This test login")
+
 	public void Login(String username, String password) {
 		loginPageObject = new LoginPage(driver);
 		loginPageObject.login(username, password);

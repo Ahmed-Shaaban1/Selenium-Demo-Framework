@@ -35,6 +35,12 @@ public class TestBase {
 		options.setExperimentalOption("prefs", prefs);
 		options.addArguments("--incognito");
 
+		if (System.getenv("CI") != null || System.getProperty("headless") != null) {
+		    options.addArguments("--headless=new");
+		    options.addArguments("--no-sandbox");
+		    options.addArguments("--disable-dev-shm-usage");
+		}
+
 		return options;
 	}
 
